@@ -9,6 +9,8 @@ console.log('Sample JavaScript #3 HW #17');
  * если нет – то счет продолжается
  */
 
+function counter() 
+
 // console.log(counter()); // 0
 
 // console.log(counter()); // 1
