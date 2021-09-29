@@ -9,23 +9,29 @@ console.log('Sample JavaScript #3 HW #17');
  * если нет – то счет продолжается
  */
 
-function counter() 
+let counter = function(n){
+    let count = 0;
 
-// console.log(counter()); // 0
+    counter.count = n !== undefined ? n : counter.count;
+    
+    return counter.count++;
+  };
 
-// console.log(counter()); // 1
+console.log(counter()); // 0
 
-// console.log(counter(100)); // 100
+console.log(counter()); // 1
 
-// console.log(counter()); // 101
+console.log(counter(100)); // 100
 
-// console.log(counter(500)); // 500
+console.log(counter()); // 101
 
-// console.log(counter()); // 501
+console.log(counter(500)); // 500
 
-// console.log(counter(0)); // 0
+console.log(counter()); // 501
 
-// console.log(counter()); // 1
+console.log(counter(0)); // 0
+
+console.log(counter()); // 1
 
 /*
  * #2
@@ -38,33 +44,53 @@ function counter()
  * counting.decrement() – уменьшает значение счетчика на 1
  */
 
-// console.log(counting.value()); // 0
+let counting = (function() {
+    let count = 0;
 
-// counting.increment();
+    return {
+        value(n) {
+          if (n !== undefined) count = n;
+          return count;
+        },
+        increment() {
+            count++;
+          }
+          
+        decrement() {
+          count--;
+        },
+        
+    };
+}());
 
-// counting.increment();
 
-// counting.increment();
+console.log(counting.value()); // 0
 
-// console.log(counting.value()); // 3
+counting.increment();
 
-// counting.decrement();
+counting.increment();
 
-// counting.decrement();
+counting.increment();
 
-// console.log(counting.value()); // 1
+console.log(counting.value()); // 3
 
-// console.log(counting.value(100)); // 100
+counting.decrement();
 
-// counting.decrement();
+counting.decrement();
 
-// console.log(counting.value()); // 99
+console.log(counting.value()); // 1
 
-// console.log(counting.value(200)); // 200
+console.log(counting.value(100)); // 100
 
-// counting.increment();
+counting.decrement();
 
-// console.log(counting.value()); // 201
+console.log(counting.value()); // 99
+
+console.log(counting.value(200)); // 200
+
+counting.increment();
+
+console.log(counting.value()); // 201
 
 /*
  * #3
