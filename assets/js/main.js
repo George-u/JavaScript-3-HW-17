@@ -44,29 +44,32 @@ console.log(counter()); // 1
  * counting.decrement() – уменьшает значение счетчика на 1
  */
 
-let counting = (function() {
-    let count = 0;
+let counting = (function () {
+  let count = 0;
 
-    return {
-        value(n) {
-          if (n !== undefined) count = n;
-          return count;
-        },
-        increment() {
-            count++;
-          }
-          
-        decrement() {
-          count--;
-        },
-        
-    };
+  return {
+    value(num) {
+      if (num !== undefined) count = num;
+
+      return count;
+    },
+
+    increment() {
+      count++;
+    },
+
+    decrement() {
+      count--;
+    }
+   
+  };
 }());
 
 
-console.log(counting.value()); // 0
 
-counting.increment();
+console.log(counting.value()), // 0
+
+counting.increment(),
 
 counting.increment();
 
@@ -104,9 +107,11 @@ console.log(counting.value()); // 201
  * console.log(myPow(2, 3, myPrint)); // 2^3=8
  */
 
-//  console.log(myPow(3, 4, myPrint)); // 3^4=81
+let myPow = (a, b, myPrint)
 
-// console.log(myPow(2, 3, myPrint)); // 2^3=8
+ console.log(myPow(3, 4, myPrint)); // 3^4=81
+
+console.log(myPow(2, 3, myPrint)); // 2^3=8
 
 /*
  * #4
