@@ -107,9 +107,18 @@ console.log(counting.value()); // 201
  * console.log(myPow(2, 3, myPrint)); // 2^3=8
  */
 
-let myPow = (a, b, myPrint)
+let myPrint = (a, b, res) => `${a}^${b}=${res}`;
+let myPow = (a, b, callback) => {
+  let pow = (x, n) => {
+    if (n !== 1) return x *= pow(x, n - 1);
 
- console.log(myPow(3, 4, myPrint)); // 3^4=81
+    return x;
+  };
+
+  return callback(a, b, pow(a, b));
+};
+
+console.log(myPow(3, 4, myPrint)); // 3^4=81
 
 console.log(myPow(2, 3, myPrint)); // 2^3=8
 
@@ -123,6 +132,35 @@ console.log(myPow(2, 3, myPrint)); // 2^3=8
  * car.name – бренд авто, строка
  * car.year – год выпуска, число
  * car.used – строка для описания состояния авто, допускаются значения 'used' и 'new'
+ 
+*/
+
+var car = {
+  car.engine: 1900,
+  car.model: 'Caddy',
+  car.name: 'Volkswagen',
+  car.year: 2008,
+  car.used: 'used',
+  info: 'aboutcar',
+
+};
+
+var car = {
+  car.engine: 2500,
+  car.model: 'Vitara',
+  car.name: 'Suzuki',
+  car.year: 2020,
+  car.used: 'new',
+  info: 'aboutcar',
+};
+
+
+
+console.log(car);
+console.log (car);
+
+
+
  *
  * #5
  *
